@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
 import Feed from "@/components/Feed";
-export default function Home() {
+import Widget from "@/components/Widget";
+export default function Home({ newsResults }) {
   return (
     <>
       <Head>
@@ -11,14 +11,28 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>{" "}
-      <main className="flex min-h-screen max-w-7xl mx-auto ">
+      <main className="flex min-h-screen mx-auto ">
         {" "}
         {/* Side bar */}
         <Sidebar />
         {/* Feedback */}
         <Feed />
-        {/* Widgets */}{" "}
+        {/* Widgets */} <Widget news={newsResults.articles} />
       </main>{" "}
     </>
   );
+}
+
+// https://saurav.tech/NewsAPI/top-headlines/category/health/us.json
+export async function getServerSideProps() {
+  const newsResults = await fetch(
+    "https://saurav.tech/NewsAPI/top-headlines/category/health/us.json"
+  )
+    .then((response) => response.json())
+    .catch((err) => err.json());
+  return {
+    props: {
+      newsResults,
+    },
+  };
 }

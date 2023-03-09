@@ -5,7 +5,7 @@ import {
   HeartIcon,
   ShareIcon,
   TrashIcon,
-} from "@heroicons/react/solid";
+} from "@heroicons/react/outline";
 
 export default function Post({ post }) {
   return (
@@ -47,11 +47,11 @@ export default function Post({ post }) {
 
         <div className="flex items-center justify-between mt-2 text-gray-500">
           {/* icons */}
-          <ChatIcon className="h-9  w-9 hoverEffect p-1 hover:text-sky-500 hover:bg-sky-100" />
-          <TrashIcon className="h-9  hoverEffect p-1 hover:text-red-500 hover:bg-sky-100" />
-          <HeartIcon className="h-9  hoverEffect p-1 hover:text-red-500 hover:bg-sky-100" />
-          <ShareIcon className="h-9 hoverEffect p-1 hover:text-sky-500 hover:bg-sky-100" />
-          <ChartBarIcon className="h-9 hoverEffect p-1 hover:text-sky-500 hover:bg-sky-100" />
+          <ChatIcon className="h-[34px]  w-9 hoverEffect p-1 hover:text-sky-500 hover:bg-sky-100" />
+          <TrashIcon className="h-[34px]  hoverEffect p-1 hover:text-red-500 hover:bg-sky-100" />
+          <HeartIcon className="h-[34px]  hoverEffect p-1 hover:text-red-500 hover:bg-sky-100" />
+          <ShareIcon className="h-[34px] hoverEffect p-1 hover:text-sky-500 hover:bg-sky-100" />
+          <ChartBarIcon className="h-[34px] hoverEffect p-1 hover:text-sky-500 hover:bg-sky-100" />
         </div>
       </div>
     </div>
